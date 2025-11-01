@@ -1,0 +1,454 @@
+/* AuthPages.css - Estilos optimizados y completos */
+
+:root {
+  /* Colores base */
+  --ion-color-primary: #7c4dff;
+  --ion-color-primary-light: #b388ff;
+  --ion-color-primary-dark: #5e35b1;
+  --ion-color-danger: #ff3a30;
+  --ion-color-warning: #ff9500;
+
+  --moon-icon-color: #5e35b1;
+  --sun-icon-color: #ffeb3b;
+  
+  /* Tema claro */
+  --auth-bg-light: linear-gradient(to bottom, #f9f5ff, #ffffff);
+  --auth-text-light: #2c3e50;
+  --auth-text-secondary-light: #5d5d5d;
+  --auth-input-bg-light: #ffffff;
+  --auth-input-border-light: #e0e0e0;
+  --auth-input-text-light: #333333;
+  --auth-input-label-light: #5d5d5d;
+  --auth-input-placeholder-light: #a0a0a0;
+  --auth-toolbar-title-light: #5e35b1;
+  --back-button-color-light: #5e35b1;
+  
+  /* Tema oscuro */
+  --auth-bg-dark: linear-gradient(to bottom, #1a0535, #2d0b5a);
+  --auth-text-dark: #f0e5ff;
+  --auth-text-secondary-dark: #c7b2ff;
+  --auth-input-bg-dark: rgba(255, 255, 255, 0.1);
+  --auth-input-border-dark: rgba(179, 136, 255, 0.3);
+  --auth-input-text-dark: #ffffff;
+  --auth-input-label-dark: #c7b2ff;
+  --auth-input-placeholder-dark: #a0a0c0;
+  --auth-toolbar-title-dark: #fff;
+  --back-button-color-dark: #fff;
+}
+
+/* Reset de estilos nativos */
+ion-input {
+  --background: transparent;
+  --color: inherit;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+/* Estructura principal */
+.auth-content {
+  --background: var(--auth-bg-light);
+  --color: var(--auth-text-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.auth-content.dark {
+  --background: var(--auth-bg-dark);
+  --color: var(--auth-text-dark);
+}
+
+.auth-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Header */
+.auth-toolbar-title {
+  color: var(--auth-toolbar-title-light);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.ion-no-border{
+  height: 70px;
+
+
+}
+.dark .auth-toolbar-title {
+  color: var(--auth-toolbar-title-dark);
+}
+
+.back-button {
+  color: var(--back-button-color-light);
+}
+
+.dark .back-button {
+  color: var(--back-button-color-dark);
+}
+
+/* Logo y títulos */
+.auth-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.auth-title {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, var(--ion-color-primary), var(--ion-color-primary-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.auth-subtitle {
+  display: block;
+  font-size: 1rem;
+  color: var(--auth-text-secondary-light);
+}
+
+.dark .auth-subtitle {
+  color: var(--auth-text-secondary-dark);
+}
+
+/* Formulario */
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.auth-input {
+  --background: var(--auth-input-bg-light);
+  --border-radius: 12px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --min-height: 60px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--auth-input-border-light);
+  transition: all 0.2s ease;
+  background: var(--auth-input-bg-light);
+}
+
+.auth-input.dark {
+  --background: var(--auth-input-bg-dark);
+  border-color: var(--auth-input-border-dark);
+  background: var(--auth-input-bg-dark);
+}
+
+.auth-input.ion-focused {
+  border-color: var(--ion-color-primary);
+  box-shadow: 0 0 0 2px rgba(124, 77, 255, 0.2);
+}
+
+.auth-input-icon {
+  color: var(--ion-color-primary);
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.auth-input-label {
+  color: var(--auth-input-label-light);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  font-weight: 500;
+  display: block;
+}
+
+.dark .auth-input-label {
+  color: var(--auth-input-label-dark);
+}
+
+.auth-input-field {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 1rem;
+  color: var(--auth-input-text-light);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.dark .auth-input-field {
+  color: var(--auth-input-text-dark);
+}
+
+.auth-input-field::placeholder {
+  color: var(--auth-input-placeholder-light);
+  opacity: 1;
+}
+
+.dark .auth-input-field::placeholder {
+  color: var(--auth-input-placeholder-dark);
+}
+
+/* Botón */
+.auth-button {
+  --background: var(--ion-color-primary);
+  --background-activated: var(--ion-color-primary-dark);
+  --background-hover: var(--ion-color-primary-dark);
+  --color: white;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(124, 77, 255, 0.2);
+  font-weight: 600;
+  height: 50px;
+  margin: 2rem 0 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.auth-button:active {
+  transform: scale(0.98);
+}
+
+/* Footer */
+.auth-footer {
+  text-align: center;
+  color: var(--auth-text-secondary-light);
+  font-size: 0.9rem;
+  margin-top: auto;
+  padding-bottom: 20px;
+}
+
+.dark .auth-footer {
+  color: var(--auth-text-secondary-dark);
+}
+
+.auth-link {
+  color: var(--ion-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dark .auth-link {
+  color: var(--ion-color-primary-light);
+}
+
+/* Modal de error */
+ion-modal.error-modal {
+  --width: 90%;
+  --max-width: 400px;
+  --height: auto;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --backdrop-opacity: 0.5;
+}
+
+.error-card {
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.light .error-card {
+  background: #ffffff;
+}
+
+.dark .error-card {
+  background: #1e1e1e;
+}
+
+.error-card-header {
+  padding: 16px;
+  background: rgba(var(--ion-color-danger-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--ion-color-danger-rgb), 0.2);
+}
+
+.error-title-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.error-icon {
+  font-size: 1.8rem;
+  color: var(--ion-color-danger);
+}
+
+.error-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ion-color-danger);
+}
+
+.close-button {
+  --color: var(--ion-color-medium);
+  --color-activated: var(--ion-color-danger);
+}
+
+.error-content {
+  padding: 16px;
+  text-align: center;
+}
+
+/* Estilos base del mensaje de error */
+.error-message {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0.5em 0;
+  padding: 0.75em;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Estilos para tema claro */
+.light .error-message {
+  color: var(--ion-color-danger);
+  background-color: rgba(255, 58, 48, 0.15);
+  border-left: 4px solid var(--ion-color-danger);
+  box-shadow: 0 2px 8px rgba(255, 58, 48, 0.1);
+  animation: pulseLight 1s ease-in-out infinite alternate;
+}
+
+/* Estilos para tema oscuro */
+.dark .error-message {
+  color: #ff9e9e;
+  background-color: rgba(255, 58, 48, 0.25);
+  border-left: 4px solid #ff9e9e;
+  box-shadow: 0 2px 12px rgba(255, 58, 48, 0.2);
+  text-shadow: 0 0 10px rgba(255, 58, 48, 0.4);
+  animation: pulseDark 1s ease-in-out infinite alternate;
+}
+
+/* Animaciones mejoradas - ¡Ahora mucho más visibles! */
+@keyframes pulseLight {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px rgba(255, 58, 48, 0.1);
+    background-color: rgba(255, 58, 48, 0.15);
+  }
+  50% {
+    transform: scale(1.01);
+    box-shadow: 0 4px 16px rgba(255, 58, 48, 0.2);
+    background-color: rgba(255, 58, 48, 0.2);
+  }
+  100% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(255, 58, 48, 0.3);
+    background-color: rgba(255, 58, 48, 0.25);
+  }
+}
+
+@keyframes pulseDark {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 2px 12px rgba(255, 58, 48, 0.2);
+    background-color: rgba(255, 58, 48, 0.25);
+  }
+  50% {
+    transform: scale(1.01);
+    box-shadow: 0 4px 20px rgba(255, 58, 48, 0.4);
+    background-color: rgba(255, 58, 48, 0.3);
+  }
+  100% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 24px rgba(255, 58, 48, 0.5);
+    background-color: rgba(255, 58, 48, 0.35);
+  }
+}
+
+/* Estilo para cada línea del error */
+.error-line {
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Logo icon */
+.logo-icon {
+  font-size: 2.5rem;
+  color: var(--ion-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Iconos de tema */
+.sol {
+  color: var(--sun-icon-color);
+}
+
+.luna {
+  color: var(--moon-icon-color);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-container {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes modalEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ion-modal.error-modal {
+  animation: modalEnter 0.3s ease-out;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 400px) {
+  .auth-title {
+    font-size: 1.8rem;
+  }
+  
+  .auth-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .auth-form {
+    padding: 0;
+  }
+  
+  .auth-input {
+    --min-height: 56px;
+    margin-bottom: 1.2rem;
+  }
+  
+  .auth-button {
+    height: 48px;
+    margin: 1.5rem 0 1.2rem;
+  }
+}
+
+/* Prevenir movimiento del formulario */
+.auth-content {
+  --keyboard-offset: 0 !important;
+}
+/* Estilos generales del header */
+.auth-toolbar {
+  --background: #ffffff;
+  --color: #b388ff; 
+  --border-color: transparent;
+    height: 70px;
+    align-content: end;
+}
+
+/* Modo oscuro */
+.auth-toolbar.dark {
+  --background: #5e35b1; 
+  --color: #ffffff; 
+}

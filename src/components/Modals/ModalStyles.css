@@ -1,0 +1,221 @@
+/* ModalStyles.css - Estilos completos para ambos modales */
+
+/* Estructura base */
+.modal-base {
+  --width: 90%;
+  --max-width: 400px;
+  --height: auto;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --backdrop-opacity: 0.5;
+  animation: modalEnter 0.3s ease-out;
+}
+
+.modal-card {
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.close-button {
+  --color: var(--ion-color-medium);
+  --color-activated: var(--ion-color-danger);
+}
+
+.modal-content {
+  padding: 16px;
+  text-align: center;
+}
+
+.modal-message {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0.5em 0;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.modal-button {
+  --border-radius: 8px;
+  font-weight: 500;
+  height: 45px;
+}
+
+/* Estilos específicos para modal de error */
+.error-card-header {
+  background: rgba(var(--ion-color-danger-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--ion-color-danger-rgb), 0.2) !important;
+}
+
+.error-icon {
+  font-size: 1.8rem;
+  color: var(--ion-color-danger);
+}
+
+.error-title {
+  color: var(--ion-color-danger);
+}
+
+.error-message {
+  color: var(--ion-color-danger);
+}
+
+.light .error-card {
+  background: #ffffff;
+  border-left: 4px solid var(--ion-color-danger);
+}
+
+.dark .error-card {
+  background: #1e1e1e;
+  border-left: 4px solid #ff9e9e;
+}
+
+/* Estilos específicos para modal de éxito */
+.success-card-header {
+  background: rgba(var(--ion-color-success-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--ion-color-success-rgb), 0.2) !important;
+}
+
+.success-icon {
+  font-size: 1.8rem;
+  color: var(--ion-color-success);
+}
+
+.success-title {
+  color: var(--ion-color-success);
+}
+
+.success-message {
+  color: var(--ion-color-success);
+}
+
+.light .success-card {
+  background: #ffffff;
+  border-left: 4px solid var(--ion-color-success);
+}
+
+.dark .success-card {
+  background: #1e1e1e;
+  border-left: 4px solid #2dd36f;
+}
+
+/* Botón de login específico */
+.login-button {
+  --background: var(--ion-color-primary);
+  --background-activated: var(--ion-color-primary-shade);
+  --background-hover: var(--ion-color-primary-tint);
+}
+
+/* Animaciones */
+@keyframes modalEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseLight {
+  0% { background-color: rgba(255, 58, 48, 0.1); }
+  50% { background-color: rgba(255, 58, 48, 0.2); }
+  100% { background-color: rgba(255, 58, 48, 0.3); }
+}
+
+@keyframes pulseDark {
+  0% { background-color: rgba(255, 58, 48, 0.2); }
+  50% { background-color: rgba(255, 58, 48, 0.3); }
+  100% { background-color: rgba(255, 58, 48, 0.4); }
+}
+
+.success-line, .error-line {
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Añadir al final del archivo existente */
+
+/* Mejoras específicas para el modal de éxito */
+.success-modal {
+  --width: 90%;
+  --max-width: 400px;
+  --height: auto;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --backdrop-opacity: 0.5;
+}
+
+.success-card {
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  animation: modalEnter 0.3s ease-out;
+}
+
+.success-card-header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(var(--ion-color-success-rgb), 0.2);
+}
+
+.success-content {
+  padding: 16px;
+  text-align: center;
+}
+
+.success-message {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: var(--ion-text-color);
+}
+
+.success-line {
+  margin: 0.5em 0;
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Efecto de borde izquierdo para éxito */
+.light .success-card {
+  background: #ffffff;
+  border-left: 4px solid var(--ion-color-success);
+}
+
+.dark .success-card {
+  background: var(--ion-background-color);
+  border-left: 4px solid var(--ion-color-success);
+}
+
+/* Animación sutil para el icono de éxito */
+.success-icon {
+  animation: pulseSuccess 1.5s infinite;
+}
+
+@keyframes pulseSuccess {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

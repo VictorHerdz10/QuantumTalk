@@ -1,0 +1,346 @@
+/* Profile.css */
+:root {
+  /* Colores base */
+  --ion-color-primary: #7c4dff;
+  --ion-color-primary-rgb: 124, 77, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #6d44e0;
+  --ion-color-primary-tint: #895fff;
+
+  /* Modo claro */
+  --profile-bg: #ffffff;
+  --profile-text: #2c3e50;
+  --profile-border: #e0e0e0;
+  --profile-input-bg: #f5f5f5;
+  --profile-placeholder: #7a7a7a;
+}
+
+/* Modo oscuro */
+.dark-theme {
+  --profile-bg: #1a0535;
+  --profile-text: #f0e5ff;
+  --profile-border: #5e35b1;
+  --profile-input-bg: rgba(124, 77, 255, 0.1);
+  --profile-placeholder: #b388ff;
+}
+
+/* Toolbar */
+.profile-toolbar {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-primary-contrast);
+  --border-color: transparent;
+  height: 70px;
+  align-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.dark-theme .profile-toolbar {
+  --background: #5e35b1;
+}
+
+.profile-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.back-button {
+  --color: var(--ion-color-primary-contrast);
+}
+
+.action-button {
+  --color: var(--ion-color-primary-contrast);
+}
+
+/* Contenido */
+.profile-content {
+  --background: var(--profile-bg);
+  --color: var(--profile-text);
+}
+
+.profile-container {
+  background: var(--profile-bg);
+  color: var(--profile-text);
+  padding: 20px;
+}
+
+/* Avatar */
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--ion-color-primary);
+  box-shadow: 0 4px 16px rgba(var(--ion-color-primary-rgb), 0.2);
+}
+
+.dark-theme .profile-avatar {
+  border-color: var(--ion-color-primary-tint);
+}
+
+.avatar-placeholder {
+  background: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
+}
+
+.dark-theme .avatar-placeholder {
+  background: var(--ion-color-primary-shade);
+}
+
+/* Formulario */
+.profile-item {
+  --background: transparent;
+  --border-color: var(--profile-border);
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 15px;
+}
+
+.field-icon {
+  color: var(--ion-color-primary);
+}
+
+.field-label {
+  color: var(--profile-text);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.profile-input, .profile-textarea {
+  --background: var(--profile-input-bg);
+  --color: var(--profile-text);
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --border-radius: 8px;
+  margin-top: 8px;
+}
+
+.profile-value {
+  color: var(--profile-text);
+  margin: 10px 0;
+  padding: 8px 0;
+}
+
+/* Modo oscuro adicional */
+.dark-theme .profile-input,
+.dark-theme .profile-textarea {
+  --highlight-color-focused: var(--ion-color-primary-tint);
+}
+
+.dark-theme ion-item {
+  --border-color: rgba(179, 136, 255, 0.2);
+}
+
+/* Spinner */
+.uploading-spinner {
+  --color: var(--ion-color-primary-contrast);
+}
+
+/* Action Sheet personalizado */
+ion-action-sheet {
+  --button-color: var(--profile-text);
+  --background: var(--profile-bg);
+  --backdrop-opacity: 0.7;
+}
+
+.dark-theme ion-action-sheet {
+  --button-color: var(--ion-color-primary-contrast);
+  --background: var(--ion-color-primary-shade);
+}
+
+.profile-content {
+  --background: var(--ion-background-color);
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.avatar-container {
+  position: relative;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--ion-color-primary);
+  box-shadow: 0 4px 16px rgba(var(--ion-color-primary-rgb), 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+.profile-avatar img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ion-color-primary);
+  color: white;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(var(--ion-color-primary-rgb), 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.avatar-container:hover .avatar-overlay {
+  opacity: 1;
+}
+
+.edit-icon {
+  color: white;
+  font-size: 2rem;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.profile-value {
+  margin: 10px 0;
+  color: var(--ion-text-color);
+  font-size: 1rem;
+  white-space: pre-line;
+  padding: 8px 0;
+}
+
+/* Estilos para modo oscuro */
+.dark .profile-avatar {
+  border-color: var(--ion-color-primary-tint);
+}
+
+.dark .avatar-placeholder {
+  background: var(--ion-color-primary-shade);
+}
+
+.dark .avatar-overlay {
+  background: rgba(var(--ion-color-primary-rgb), 0.7);
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.uploading-avatar {
+  animation: pulse 1.5s infinite;
+  opacity: 0.8;
+}
+
+/* Inputs en modo edición */
+ion-item {
+  --background: transparent;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --border-color: rgba(var(--ion-color-primary-rgb), 0.1);
+}
+
+ion-input, ion-textarea {
+  --background: rgba(var(--ion-color-primary-rgb), 0.05);
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --border-radius: 8px;
+  --color: var(--ion-text-color);
+}
+
+.dark ion-input, .dark ion-textarea {
+  --background: rgba(var(--ion-color-primary-rgb), 0.1);
+}
+/* Profile.css */
+.profile-content {
+  --background: white;
+  --ion-text-color: #5e35b1;
+}
+
+.profile-container {
+  background: white;
+  color: var(--ion-color-violet-dark);
+}
+
+.profile-avatar {
+  border: 3px solid var(--ion-color-violet);
+  box-shadow: 0 4px 16px rgba(124, 77, 255, 0.2);
+}
+
+.avatar-placeholder {
+  background: var(--ion-color-violet);
+  color: white;
+}
+
+/* Dark mode */
+.dark .profile-content {
+  --background: linear-gradient(to bottom, #1a0535, #2d0b5a);;
+  --ion-text-color: #b388ff;
+}
+
+.dark .profile-container {
+  background:  linear-gradient(to bottom, #1a0535, #2d0b5a);
+}
+
+.dark .profile-avatar {
+  border-color: var(--ion-color-violet-light);
+}
+/* Profile.css */
+.uploading-avatar {
+  position: relative;
+}
+.dark .profile-textarea{
+    color: #f5f5f5;
+}.dark .profile-input{
+    color: #f5f5f5;
+}
+
+.uploading-avatar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(124, 77, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  z-index: 10;
+}

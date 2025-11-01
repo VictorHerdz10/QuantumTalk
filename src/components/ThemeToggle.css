@@ -1,0 +1,38 @@
+/* Variables de color */
+:root {
+    
+  --toggle-button-bg: #9373c1;
+  --moon-icon-color: #5e35b1;
+  --sun-icon-color: #ffeb3b;
+}
+
+.theme-toggle-button {
+  position: absolute;
+  top: 40px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--toggle-button-bg);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle-icon {
+  font-size: 1.5rem;
+  color: var(--moon-icon-color);
+}
+
+.dark .theme-toggle-icon {
+  color: var(--sun-icon-color);
+}
