@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "source": "resources/icon.png",
+    "target": "android/app/src/main/res"
+  },
+  "splash": {
+    "source": "resources/splash.png",
+    "target": "android/app/src/main/res"
+  }
+}
