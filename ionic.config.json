@@ -1,7 +1,11 @@
 {
-  "name": "my-chat-app",
+  "name": "Quantum Talk",
   "integrations": {
     "capacitor": {}
   },
-  "type": "react-vite"
+  "type": "react-vite",
+    "server": {
+      "url": "http://192.168.80.123:8100",
+      "cleartext": true
+    }
 }
